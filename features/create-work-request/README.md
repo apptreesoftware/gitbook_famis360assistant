@@ -38,20 +38,27 @@ For more information regarding how WO Forms are configured in FAMIS 360, [click 
 
 Details regarding these additional message prompts will be documented for each customer assistant conversation request.  Refer to the AppTree ticket for more information.
 
+### Verify Contact Information
+
+| Order | Message | Prompt Options | List Information | API | Additional Information |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 7 | Please verify your contact information |  |  |  |  |
+| 8 | &lt;markdown displaying user's first name, last name, phone, email, and department&gt; | Update contact information; Verified |  | `Users` | Customers will configure FAMIS360 to include/require phone, email, department.  These attributes will need to be validated if required and null before proceeding to the next message prompt |
+
 ### Additional Details
 
 | Order | Message | Prompt Options | List Information | API | Additional Information |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 7 | Please include additional details regarding your request | Select an asset; Pre-assign the work request; Add additional comments regarding the request; Set a requested completion date; I'm ready to submit this request |  |  | Only display prompt options "Select an asset" and "Pre-assign the work request" if the user is a Full User based on their user security settings. |
-| 8.1 | Select the asset this work request pertains to | \(list\) | List of active assets for the property/floor/space selected | `Assets` | If the user responds "Select an asset" to \#7.  The user should be permitted to search a list of assets or scan a barcode.  Display the asset name and number in ascending order by number.  The value associated with the barcode scan will be "BarcodeNumber" |
-| 8.2 | Would you like to pre-assign this work request to a crew, user or both | Crew; User; Both |  |  | If the user responds "Pre-assign the work request" to \#7. Only display this prompt option if the customer is using Crews in FAMIS360, else go to \#8.2.2  |
-| 8.2.1 | Select a crew to assign to this work request | \(list\) | List of all active crews associated with the user | `CrewUserAssociations` | If the user responds "Crew" or "Both" to \#8.2.  Display the crew name in ascending order |
-| 8.2.2 | Select a user to assign to this work request | \(list\) | List of all active full user accounts that have access to the selected activity group and allow assignment = Yes | `Users; UserActivityGroupAssociations` | If the user responds "User" or "Both" to \#8.2.  Display the user's lastname, firstname in ascending order |
-| 8.3 | Enter additional comments regarding your work request |  |  |  | If the user responds "Add additional comments regarding the request" to \#7.  The user will be prompted with a text prompt.   |
-| 8.4 | Select a requested completion date |  |  |  | If the user responds "Set a requested completion date" to \#7.  The user will be prompted with a date picker |
-| 9 | Thank you for submitting a work request for  &lt;REQUEST TYPE&gt;/&lt;REQUEST SUB TYPE&gt; in location &lt;PROPERTY&gt;/&lt;FLOOR&gt;/&lt;SPACE&gt;. We will notify you when the work request is created and provide you with the new work request ID for your reference. |  |  |  | If the user responds "I'm ready to submit this request" to \#7.  Mark the conversation complete.  Refer to the [Submit Request](submit-request.md) section for details on how to create the work request and related conversations |
+| 9 | Please include additional details regarding your request | Select an asset; Pre-assign the work request; Select a priority; Add additional comments regarding the request; Set a requested completion date; Add attachments; I'm ready to submit this request |  |  | Only display prompt options "Select an asset" and "Pre-assign the work request" if the user is a Full User based on their user security settings. |
+| 10.1 | Select the asset this work request pertains to | \(list\) | List of active assets for the property/floor/space selected | `Assets` | If the user responds "Select an asset" to \#9.  The user should be permitted to search a list of assets or scan a barcode.  Display the asset name and number in ascending order by number.  The value associated with the barcode scan will be "BarcodeNumber" |
+| 10.2 | Would you like to pre-assign this work request to a crew, user or both | Crew; User; Both |  |  | If the user responds "Pre-assign the work request" to \#9. Only display this prompt option if the customer is using Crews in FAMIS360, else go to \#10.2.2  |
+| 10.2.1 | Select a crew to assign to this work request | \(list\) | List of all active crews associated with the user | `CrewUserAssociations` | If the user responds "Crew" or "Both" to \#10.2.  Display the crew name in ascending order |
+| 10.2.2 | Select a user to assign to this work request | \(list\) | List of all active full user accounts that have access to the selected activity group and allow assignment = Yes | `Users; UserActivityGroupAssociations` | If the user responds "User" or "Both" to \#10.2.  Display the user's lastname, firstname in ascending order |
+| 10.3 | Enter additional comments regarding your work request |  |  |  | If the user responds "Add additional comments regarding the request" to \#9.  The user will be prompted with a text prompt.   |
+| 10.4 | Select a requested completion date |  |  |  | If the user responds "Set a requested completion date" to \#9.  The user will be prompted with a date picker |
+| 11 | Thank you for submitting a work request for  &lt;REQUEST TYPE&gt;/&lt;REQUEST SUB TYPE&gt; in location &lt;PROPERTY&gt;/&lt;FLOOR&gt;/&lt;SPACE&gt;. We will notify you when the work request is created and provide you with the new work request ID for your reference. |  |  |  | If the user responds "I'm ready to submit this request" to \#9.  Mark the conversation complete.  Refer to the [Submit Request](submit-request.md) section for details on how to create the work request and related conversations |
 
 {% hint style="info" %}
-The prompt options presented in \#7 are meant for the user to enter whatever additional details are needed for their new work request.  These are all optional details.  When a user selects one of the prompt options, they should be returned back to the full list of prompt options in \#7 to select another option.  Once the user selects the option to submit the request is when they will finally exit the prompt options in \#7 and move on in the conversation.
+The prompt options presented in \#9 are meant for the user to enter whatever additional details are needed for their new work request.  These are all optional details.  When a user selects one of the prompt options, they should be returned back to the full list of prompt options in \#7 to select another option.  Once the user selects the option to submit the request is when they will finally exit the prompt options in \#9 and move on in the conversation.
 {% endhint %}
 

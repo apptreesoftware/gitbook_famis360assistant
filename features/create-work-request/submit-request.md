@@ -8,7 +8,7 @@ When a new work request is ready to submit to FAMIS 360, the following actions w
 
 ### FAMIS 360 WorkOrder POST Details
 
-{% api-method method="post" host="https://<customerenvironmenturl>/apis/360facility/v1/workorders" path="" %}
+{% api-method method="post" host="https://<CustomerEnvironmentURL>/apis/360facility/v1/workorders" path="" %}
 {% api-method-summary %}
 WorkOrders
 {% endapi-method-summary %}
@@ -19,11 +19,75 @@ WorkOrders
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="RequestorLastName" type="string" required=false %}
+User's last name
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="RequestorFirstName" type="string" required=false %}
+User's first name
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="RequestorEmail" type="string" required=false %}
+User's email
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="RequestorPhone" type="string" required=false %}
+User's phone
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="DepartmentId" type="integer" required=false %}
+User's department
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="SpaceId" type="integer" required=false %}
+Space prompt response
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="RequestTypeId" type="integer" required=false %}
+Request Type prompt response
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="RequestSubTypeId" type="integer" required=false %}
+Request SubType prompt response
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="StatementOfWork" type="string" required=false %}
+Additional comments prompt response
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="AssetId" type="integer" required=false %}
+Asset prompt response
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="CrewId" type="integer" required=false %}
+Crew prompt response
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="AssignedToId" type="integer" required=false %}
+Assigned To prompt response
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="RequestPriorityId" type="integer" required=false %}
+Priority prompt response
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="RequestedCompletionDate" type="string" required=false %}
+Requested completion date prompt response
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="NotifyRequestorFlag" type="boolean" required=false %}
+False
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Udfs" type="array" required=false %}
+If work request has WO Form/Custom Information, then include prompt responses in the appropriate UDF
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="Attachments" type="array" required=false %}
 
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -33,12 +97,15 @@ WorkOrders
 {% endapi-method-response-example-description %}
 
 ```
-
+--Refer to Accruent API documentation for details regarding API response
+--New work request ID will be included in the response
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+If any of the API request body attributes do not have a value, then they should not be included in the POST request.
 
 ### Notification of New Work Request
 
