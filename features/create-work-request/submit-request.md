@@ -8,7 +8,41 @@ When a new work request is ready to submit to FAMIS 360, the following actions w
 
 ### FAMIS 360 WorkOrder POST Details
 
+{% api-method method="post" host="https://<customerenvironmenturl>/apis/360facility/v1/workorders" path="" %}
+{% api-method-summary %}
+WorkOrders
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="" type="string" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 ### Notification of New Work Request
+
+A new conversation thread will be pushed to the user who created the work request to notify them the work request has been created, provide the request ID, and display a summary of the request details.
 
 #### Title:  New work request XXXX has been created
 
@@ -18,10 +52,13 @@ When a new work request is ready to submit to FAMIS 360, the following actions w
 * Request Type
 * Request Sub Type
 * Property / Floor / Space
-* Asset
-* Assigned To
+* Asset \(only display if user is Full User\)
+* Crew / Assigned To \(only display if user is Full User\)
+* Create Date
+* Requested Completion Date
+* Status
 
-Create an AT\_TASK trigger that will call the FAMIS 360 API to create the new work request. The response will contain the new work request ID. When the task has completed, then push a conversation to the user with the following. Title: New work request XXXX has been created Subtitle: markdown table that displays the request details including statement of work, request type, sub type, property, space, asset, assigned to, requested completion date, status, create date
+When the user selects the new work request conversation, then redisplay the request details from the subtitle.
 
-When the user selects the new work request conversation, then redisplay the request details from the subtitle. The conversation should then be marked complete.
+The conversation should then be marked complete.
 
