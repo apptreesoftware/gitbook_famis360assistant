@@ -2,7 +2,7 @@
 
 FAMIS 360 allows users to create new work requests.  Depending on the user's permissions will determine what attributes they can enter for the new work request, as well as what list values they can select from.
 
-Users will be prompted to enter the following standard information about the work request.
+Users will be prompted to enter the following standard information about the work request within the conversation.
 
 ### Select Location
 
@@ -44,7 +44,9 @@ Details regarding these additional message prompts will be documented for each c
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 7 | Please include additional details regarding your request | Select an asset; Pre-assign the work request; Add additional comments regarding the request; Set a requested completion date; I'm ready to submit this request |  |  | Only display prompt options "Select an asset" and "Pre-assign the work request" if the user is a Full User based on their user security settings. |
 | 8.1 | Select the asset this work request pertains to | \(list\) | List of active assets for the property/floor/space selected | `Assets` | If the user responds "Select an asset" to \#7.  The user should be permitted to search a list of assets or scan a barcode.  Display the asset name and number in ascending order by number.  The value associated with the barcode scan will be "BarcodeNumber" |
-| 8.2 | Select a user to assign to this work request | \(list\) | List of all active full user accounts that have access to the selected activity group and allow assignment = Yes | `Users; UserActivityGroupAssociations` | If the user responds "Pre-assign the work request" to \#7.  Display the user's lastname, firstname in ascending order |
+| 8.2 | Would you like to pre-assign this work request to a crew, user or both | Crew; User; Both |  |  | If the user responds "Pre-assign the work request" to \#7.   |
+| 8.2.1 | Select a crew to assign to this work request | \(list\) | List of all active crews associated with the user | `CrewUserAssociations` | If the user responds "Crew" or "Both" to \#8.2.  Display the crew name in ascending order |
+| 8.2.2 | Select a user to assign to this work request | \(list\) | List of all active full user accounts that have access to the selected activity group and allow assignment = Yes | `Users; UserActivityGroupAssociations` | Display the user's lastname, firstname in ascending order |
 | 8.3 | Enter additional comments regarding your work request |  |  |  | If the user responds "Add additional comments regarding the request" to \#7.  The user will be prompted with a text prompt.   |
 | 8.4 | Select a requested completion date |  |  |  | If the user responds "Set a requested completion date" to \#7.  The user will be prompted with a date picker |
 | 9 | Thank you for submitting a work request for  &lt;REQUEST TYPE&gt;/&lt;REQUEST SUB TYPE&gt; in location &lt;PROPERTY&gt;/&lt;FLOOR&gt;/&lt;SPACE&gt;. We will notify you when the work request is created and provide you with the new work request ID for your reference. |  |  |  | If the user responds "I'm ready to submit this request" to \#7.  Mark the conversation complete.  Refer to the [Submit Request](submit-request.md) section for details on how to create the work request and related conversations |
