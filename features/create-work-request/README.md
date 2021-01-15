@@ -1,0 +1,55 @@
+# Create Work Request
+
+FAMIS 360 allows users to create new work requests.  Depending on the user's permissions will determine what attributes they can enter for the new work request, as well as what list values they can select from.
+
+Users will be prompted to enter the following standard information about the work request.
+
+### Select Location
+
+| Order | Message | Prompt Options | List Information | API | Additional Information |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | Your default location is &lt;PROPERTY NAME&gt; . Do you want to proceed with this? | Yes; No |  | `UserPropertyAssociation` | &lt;PROPERTY NAME&gt; represents the default property from the user security |
+| 1.1 | Select a property | \(list\) | List of all available properties for the user. The list contains all properties the user is associated with, as well as any properties for the region\(s\) the user is associated with. Only display active properties. | `UserPropertyAssociation;  UserRegionAssociations; PropertyRegionAssociations` | If the user responds "No" to \#1.  Display the property name in ascending order |
+| 2 | Select a floor | &lt;First list item floor&gt;; Select a different floor | List of all active floors for the property selected.  "&lt;First list item floor&gt;" prompt option will display the first list item based on tab order.  The "Select a different floor" will display a full list of floors for the property for the user to select from | `Floors` | If the user responds "Yes" to \#1.  If the property only has one floor then do not display this message prompt and set this floor as the response value.  Display the floor name in ascending order |
+| 3 | Select a space | &lt;First list item space&gt;; Select a different space | List of all active spaces for the property/floor selected.  "&lt;First list item space&gt;" prompt option will display the first list item based on tab order.  The "Select a different space" will display a full list of the spaces for the property/floor for the user to select from | `Spaces` | If the property only has one space then do not display this message prompt and set this space as the response value.  Display the space name in ascending order |
+
+{% hint style="info" %}
+Some customers only have FAMIS 360 configured for Property & Space \(not Floor\).  The conversation should be flexible based on the customer's configuration options.
+{% endhint %}
+
+### Select Activity Group
+
+| Order | Message | Prompt Options | List Information | API | Additional Information |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 4 | Please select one of the following that best describes your request | \(list\) | List of activity groups the user has access to | `UserActivityGroupAssociations` | Display the activity group name in ascending order |
+
+### Select Request Type/Sub Type
+
+| Order | Message | Prompt Options | List Information | API | Additional Information |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 5 | Select a request type | \(list\) | List of active request types for the activity group selected | `RequestTypeActivityGroupAssociations; RequestTypes` | Display the request type name in ascending order |
+| 6 | Select a request sub type | \(list\) | List of active request sub types for the request type selected | `RequestSubTypes` | Display the request sub type name in ascending order |
+
+### WO Form / Custom Information
+
+If the request sub type selected is associated with a WO Form, then the message prompts will display the custom information and prompts to the user to respond to.  These message prompts will vary.
+
+For more information regarding how WO Forms are configured in FAMIS 360, [click here](how-are-wo-forms-configured-in-famis-360.md).
+
+Details regarding these additional message prompts will be documented for each customer assistant conversation request.  Refer to the AppTree ticket for more information.
+
+### Additional Details
+
+| Order | Message | Prompt Options | List Information | API | Additional Information |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 7 | Please include additional details regarding your request | Select an asset; Pre-assign the work request; Add additional comments regarding the request; Set a requested completion date; I'm ready to submit this request |  |  | Only display prompt options "Select an asset" and "Pre-assign the work request" if the user is a Full User based on their user security settings. |
+| 8.1 | Select the asset this work request pertains to | \(list\) | List of active assets for the property/floor/space selected | `Assets` | If the user responds "Select an asset" to \#7.  The user should be permitted to search a list of assets or scan a barcode.  Display the asset name and number in ascending order by number.  The value associated with the barcode scan will be "BarcodeNumber" |
+| 8.2 | Select a user to assign to this work request | \(list\) | List of all active full user accounts that have access to the selected activity group and allow assignment = Yes | `Users; UserActivityGroupAssociations` | If the user responds "Pre-assign the work request" to \#7.  Display the user's lastname, firstname in ascending order |
+| 8.3 | Enter additional comments regarding your work request |  |  |  | If the user responds "Add additional comments regarding the request" to \#7.  The user will be prompted with a text prompt.   |
+| 8.4 | Select a requested completion date |  |  |  | If the user responds "Set a requested completion date" to \#7.  The user will be prompted with a date picker |
+| 9 | Thank you for submitting a work request for  &lt;REQUEST TYPE&gt;/&lt;REQUEST SUB TYPE&gt; in location &lt;PROPERTY&gt;/&lt;FLOOR&gt;/&lt;SPACE&gt;. We will notify you when the work request is created and provide you with the new work request ID for your reference. |  |  |  | If the user responds "I'm ready to submit this request" to \#7.  Mark the conversation complete.  Refer to the [Submit Request](submit-request.md) section for details on how to create the work request and related conversations |
+
+{% hint style="info" %}
+The prompt options presented in \#7 are meant for the user to enter whatever additional details are needed for their new work request.  These are all optional details.  When a user selects one of the prompt options, they should be returned back to the full list of prompt options in \#7 to select another option.  Once the user selects the option to submit the request is when they will finally exit the prompt options in \#7 and move on in the conversation.
+{% endhint %}
+
