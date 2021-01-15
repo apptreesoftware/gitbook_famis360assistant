@@ -127,5 +127,7 @@ A new conversation thread will be pushed to the user who created the work reques
 
 When the user selects the new work request conversation, then redisplay the request details from the subtitle.
 
-The conversation should then be marked complete.
+Display message prompt equivalent to the conversation main menu so the user can perform an additional action if they want.
+
+The Title/Subtitle should be changed to those used when a user first starts a conversation \(refer to [Features](../) for details\).
 

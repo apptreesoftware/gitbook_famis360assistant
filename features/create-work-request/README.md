@@ -45,6 +45,8 @@ Details regarding these additional message prompts will be documented for each c
 | 7 | Please verify your contact information |  |  |  |  |
 | 8 | &lt;markdown displaying user's first name, last name, phone, email, and department&gt; | Update contact information; Verified |  | `Users` | Customers will configure FAMIS360 to include/require phone, email, department.  These attributes will need to be validated if required and null before proceeding to the next message prompt |
 
+To simplify the user experience, display the user's current contact information in a markdown display, but allow the user to update the information using a modal rather than within the conversation.
+
 ### Additional Details
 
 | Order | Message | Prompt Options | List Information | API | Additional Information |
