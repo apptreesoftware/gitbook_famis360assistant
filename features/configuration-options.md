@@ -67,12 +67,12 @@ editableFields
 
 commentSettings
 
-| Config Data        | Options                                                                                | Example | Notes |
-| ------------------ | -------------------------------------------------------------------------------------- | ------- | ----- |
-| commentTypes       | update - true/false; initial - true/false; closing - true/false; internal - true/false |         |       |
-| displayCommentUser | true/false                                                                             |         |       |
-| onlyLastComment    | true/false                                                                             |         |       |
-| displayAll         | true/false                                                                             |         |       |
+| Config Data        | Options    | Example | Notes                                           |
+| ------------------ | ---------- | ------- | ----------------------------------------------- |
+| commentTypes       | array      |         | update, initial, closing, internal (true/false) |
+| displayCommentUser | true/false |         |                                                 |
+| onlyLastComment    | true/false |         |                                                 |
+| displayAll         | true/false |         |                                                 |
 
 propertySettings
 
@@ -110,20 +110,21 @@ selfRegistrationDefaults
 
 Single option configurations:
 
-| Config Data              | Options    | Example | Notes |
-| ------------------------ | ---------- | ------- | ----- |
-| helpText                 | text       |         |       |
-| bannerImageUrl           | url        |         |       |
-| stepFlowEnabled          | true/false |         |       |
-| closedRequestSize        | number     |         |       |
-| allRequestsEnabled       | true/false |         |       |
-| openRefreshInterval      | number     | 30      |       |
-| openRequestsEnabled      | true/false |         |       |
-| closedRefreshInterval    | number     | 30      |       |
-| closedRequestsEnabled    | true/false |         |       |
-| watcherRefreshIntervale  | number     | 6000    |       |
-| watcherRequestsEnabled   | true/false |         |       |
-| closedRequestsWithinDays | number     | 60      |       |
+| Config Data              | Options    | Example | Notes    |
+| ------------------------ | ---------- | ------- | -------- |
+| helpText                 | text       |         |          |
+| bannerImageUrl           | url        |         |          |
+| stepFlowEnabled          | true/false |         |          |
+| closedRequestSize        | number     |         |          |
+| allRequestsEnabled       | true/false |         |          |
+| openRefreshInterval      | number     | 30      |          |
+| openRequestsEnabled      | true/false |         |          |
+| closedRefreshInterval    | number     | 30      |          |
+| closedRequestsEnabled    | true/false |         |          |
+| watcherRefreshIntervale  | number     | 6000    |          |
+| watcherRequestsEnabled   | true/false |         |          |
+| closedRequestsWithinDays | number     | 60      |          |
+| contactMarkdownString    | text       |         | Citizens |
 
 Array option configurations:
 
@@ -214,6 +215,7 @@ requestTypeSubTypeWidget
 | ---------------- | --------- | ----- |
 | icon             | icon name |       |
 | requestTypeId    | number    |       |
+| requestSubTypeId | number    |       |
 | requestTypeLabel | text      |       |
 {% endtab %}
 
