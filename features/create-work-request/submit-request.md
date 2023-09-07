@@ -8,102 +8,86 @@ When a new work request is ready to submit to FAMIS 360, the following actions w
 
 ### FAMIS 360 WorkOrder POST Details
 
-{% api-method method="post" host="https://<CustomerEnvironmentURL>/apis/360facility/v1/workorders" path="" %}
-{% api-method-summary %}
-WorkOrders
-{% endapi-method-summary %}
+{% swagger baseUrl="https://<CustomerEnvironmentURL>/apis/360facility/v1/workorders" path="" method="post" summary="WorkOrders" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="RequestorLastName" type="string" required=false %}
+{% swagger-parameter in="body" name="RequestorLastName" type="string" %}
 User's last name
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="RequestorFirstName" type="string" required=false %}
+{% swagger-parameter in="body" name="RequestorFirstName" type="string" %}
 User's first name
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="RequestorEmail" type="string" required=false %}
+{% swagger-parameter in="body" name="RequestorEmail" type="string" %}
 User's email
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="RequestorPhone" type="string" required=false %}
+{% swagger-parameter in="body" name="RequestorPhone" type="string" %}
 User's phone
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="DepartmentId" type="integer" required=false %}
+{% swagger-parameter in="body" name="DepartmentId" type="integer" %}
 User's department
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="SpaceId" type="integer" required=false %}
+{% swagger-parameter in="body" name="SpaceId" type="integer" %}
 Space prompt response
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="RequestTypeId" type="integer" required=false %}
+{% swagger-parameter in="body" name="RequestTypeId" type="integer" %}
 Request Type prompt response
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="RequestSubTypeId" type="integer" required=false %}
+{% swagger-parameter in="body" name="RequestSubTypeId" type="integer" %}
 Request SubType prompt response
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="StatementOfWork" type="string" required=false %}
+{% swagger-parameter in="body" name="StatementOfWork" type="string" %}
 Additional comments prompt response
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="AssetId" type="integer" required=false %}
+{% swagger-parameter in="body" name="AssetId" type="integer" %}
 Asset prompt response
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="CrewId" type="integer" required=false %}
+{% swagger-parameter in="body" name="CrewId" type="integer" %}
 Crew prompt response
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="AssignedToId" type="integer" required=false %}
+{% swagger-parameter in="body" name="AssignedToId" type="integer" %}
 Assigned To prompt response
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="RequestPriorityId" type="integer" required=false %}
+{% swagger-parameter in="body" name="RequestPriorityId" type="integer" %}
 Priority prompt response
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="RequestedCompletionDate" type="string" required=false %}
+{% swagger-parameter in="body" name="RequestedCompletionDate" type="string" %}
 Requested completion date prompt response
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="NotifyRequestorFlag" type="boolean" required=false %}
+{% swagger-parameter in="body" name="NotifyRequestorFlag" type="boolean" %}
 False
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="Udfs" type="array" required=false %}
+{% swagger-parameter in="body" name="Udfs" type="array" %}
 If work request has WO Form/Custom Information, then include prompt responses in the appropriate UDF
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="Attachments" type="array" required=false %}
+{% swagger-parameter in="body" name="Attachments" type="array" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 --Refer to Accruent API documentation for details regarding API response
 --New work request ID will be included in the response
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 If any of the API request body attributes do not have a value, then they should not be included in the POST request.
 
@@ -119,8 +103,8 @@ A new conversation thread will be pushed to the user who created the work reques
 * Request Type
 * Request Sub Type
 * Property / Floor / Space
-* Asset \(only display if user is Full User\)
-* Crew / Assigned To \(only display if user is Full User\)
+* Asset (only display if user is Full User)
+* Crew / Assigned To (only display if user is Full User)
 * Create Date
 * Requested Completion Date
 * Status
@@ -129,5 +113,4 @@ When the user selects the new work request conversation, then redisplay the requ
 
 Display message prompt equivalent to the conversation main menu so the user can perform an additional action if they want.
 
-The Title/Subtitle should be changed to those used when a user first starts a conversation \(refer to [Features](../) for details\).
-
+The Title/Subtitle should be changed to those used when a user first starts a conversation (refer to [Features](../) for details).

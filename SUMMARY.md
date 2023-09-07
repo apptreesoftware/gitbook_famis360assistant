@@ -6,4 +6,4 @@
     * [How are WO Forms configured in FAMIS 360](features/create-work-request/how-are-wo-forms-configured-in-famis-360.md)
     * [Submit Request](features/create-work-request/submit-request.md)
   * [View My Requests](features/view-my-requests.md)
-
+  * [Configuration Options](features/configuration-options.md)
