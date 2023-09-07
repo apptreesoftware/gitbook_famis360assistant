@@ -9,7 +9,7 @@ The dashboard\_config settings will control which widgets will display on the da
 * My recently closed requests
 * All requests
 * My watched requests
-* "Due" requests ?????
+* Past due requests
 * Search my requests
 * Search all requests
 
@@ -258,7 +258,11 @@ watchedRequestsWidgetText
 {% endtab %}
 {% endtabs %}
 
-### Due requests
+### Past due requests
+
+{% hint style="info" %}
+This was originally requested by CW, but later decided not to deploy for customers
+{% endhint %}
 
 | Config Data           | Options    | Example | Notes |
 | --------------------- | ---------- | ------- | ----- |
