@@ -16,33 +16,33 @@ Origination code/tracking code?
 | Config Data                | Options    | Example          | Notes              |
 | -------------------------- | ---------- | ---------------- | ------------------ |
 | url                        | url        |                  |                    |
+| username                   | text       |                  |                    |
+| password                   | text       |                  |                    |
 | debug                      | true/false |                  |                    |
 | active                     | true/false |                  |                    |
-| password                   | text       |                  |                    |
-| username                   | text       |                  |                    |
-| watchers                   | true/false |                  |                    |
-| avatarUrl                  | url        |                  |                    |
 | createDate                 | datetime   |                  |                    |
 | production                 | true/false |                  |                    |
+| avatarUrl                  | url        |                  |                    |
+| readableName               | text       |                  |                    |
+| **famisNotificationTypes** | array      | push, sms, email |                    |
+| notificationOnlyOnCreate   | true/false |                  |                    |
+| watchers                   | true/false |                  |                    |
+| descriptionRequired        | true/false |                  |                    |
 | assetEnabled               | true/false |                  |                    |
 | cubeDisabled               | true/false |                  |                    |
-| readableName               | text       |                  |                    |
 | assignEnabled              | true/false |                  |                    |
-| cancelEnabled              | true/false |                  |                    |
-| commentsEnabled            | true/false |                  |                    |
 | priorityEnabled            | true/false |                  |                    |
 | priorityRequired           | true/false |                  | accruent\_360demom |
 | displayDepartment          | true/false |                  |                    |
-| attachmentsEnabled         | true/false |                  |                    |
-| **displayCommentUser**     | true/false |                  |                    |
-| userContactEnabled         | true/false |                  |                    |
 | completionDateDisabled     | true/false |                  |                    |
 | completionDateRequired     | true/false |                  | Citizens           |
-| **famisNotificationTypes** | array      | push, sms, email |                    |
-| notificationOnlyOnCreate   | true/false |                  |                    |
-| watcherNotificationDefault | true/false |                  |                    |
-| descriptionRequired        | true/false |                  |                    |
+| attachmentsEnabled         | true/false |                  |                    |
+| cancelEnabled              | true/false |                  |                    |
 | showRequesterDetails       | true/false |                  |                    |
+| commentsEnabled            | true/false |                  |                    |
+| **displayCommentUser**     | true/false |                  |                    |
+| userContactEnabled         | true/false |                  |                    |
+| watcherNotificationDefault | true/false |                  |                    |
 
 ### Array option configurations:
 

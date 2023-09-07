@@ -114,8 +114,8 @@ requestTypeSubTypeWidget
 
 | Config Data         | Options    | Example | Notes |
 | ------------------- | ---------- | ------- | ----- |
-| openRefreshInterval | number     | 30      |       |
 | openRequestsEnabled | true/false |         |       |
+| openRefreshInterval | number     | 30      |       |
 
 openRequestsWidgetText
 
@@ -146,9 +146,9 @@ openRequestsWidgetText
 
 | Config Data              | Options    | Example | Notes |
 | ------------------------ | ---------- | ------- | ----- |
+| closedRequestsEnabled    | true/false |         |       |
 | closedRequestSize        | number     | 500     |       |
 | closedRefreshInterval    | number     | 30      |       |
-| closedRequestsEnabled    | true/false |         |       |
 | closedRequestsWithinDays | number     | 60      |       |
 
 closedRequestsWidgetText
@@ -180,7 +180,6 @@ closedRequestsWidgetText
 | ----------------------- | ---------- | ------- | ----- |
 | allRequestsEnabled      | true/false |         |       |
 | allRequestsNumberToShow | number     | 25      |       |
-| allRequestsEnabled      | true/false |         |       |
 | allRefreshInterval      | number     | 6000    |       |
 | allHistoryDays          | number     | 90      |       |
 
@@ -211,8 +210,8 @@ allRequestsWidgetText
 
 | Config Data            | Options    | Example | Notes |
 | ---------------------- | ---------- | ------- | ----- |
-| watcherRefreshInterval | number     | 6000    |       |
 | watcherRequestsEnabled | true/false |         |       |
+| watcherRefreshInterval | number     | 6000    |       |
 
 watchedRequestsWidgetText
 
@@ -241,8 +240,8 @@ watchedRequestsWidgetText
 
 | Config Data           | Options    | Example | Notes |
 | --------------------- | ---------- | ------- | ----- |
-| dueRequestsFutureDays | number     | 30      |       |
 | dueRequestsEnabled    | true/false |         |       |
+| dueRequestsFutureDays | number     | 30      |       |
 | dueRefreshInterval    | number     | 6000    |       |
 
 dueRequestsWidgetText
