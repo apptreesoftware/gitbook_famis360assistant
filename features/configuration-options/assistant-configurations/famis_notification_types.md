@@ -11,3 +11,7 @@ The notification method **`push`** is the most common one configured for project
 {% hint style="warning" %}
 What notifications are sent by the assistant?
 {% endhint %}
+
+On creation of the work request, the task that creates the WO in FAMIS360 also pushes a notification to the assistant letting them know the new work request has been created.
+
+No notifications are sent when the work request is updated/edited.
