@@ -46,35 +46,36 @@ Origination code/tracking code?
 
 Single option configurations:
 
-| Config Data                 | Options    | Example          | Notes              |
-| --------------------------- | ---------- | ---------------- | ------------------ |
-| url                         | url        |                  |                    |
-| debug                       | true/false |                  |                    |
-| active                      | true/false |                  |                    |
-| password                    | text       |                  |                    |
-| username                    | text       |                  |                    |
-| watchers                    | true/false |                  |                    |
-| avatarUrl                   | url        |                  |                    |
-| createDate                  | datetime   |                  |                    |
-| production                  | true/false |                  |                    |
-| assetEnabled                | true/false |                  |                    |
-| cubeDisabled                | true/false |                  |                    |
-| readableName                | text       |                  |                    |
-| assignEnabled               | true/false |                  |                    |
-| cancelEnabled               | true/false |                  |                    |
-| commentsEnabled             | true/false |                  |                    |
-| priorityEnabled             | true/false |                  |                    |
-| priorityRequired            | true/false |                  | accruent\_360demom |
-| displayDepartment           | true/false |                  |                    |
-| attachmentsEnabled          | true/false |                  |                    |
-| **displayCommentUser**      | true/false |                  |                    |
-| userContactEnabled          | true/false |                  |                    |
-| completionDateDisabled      | true/false |                  |                    |
-| completionDateRequired      | true/false |                  | Citizens           |
-| **famiseNotificationTypes** | array      | push, sms, email |                    |
-| notificationOnlyOnCreate    | true/false |                  |                    |
-| watcherNotificationDefault  | true/false |                  |                    |
-| descriptionRequired         | true/false |                  |                    |
+| Config Data                | Options    | Example          | Notes              |
+| -------------------------- | ---------- | ---------------- | ------------------ |
+| url                        | url        |                  |                    |
+| debug                      | true/false |                  |                    |
+| active                     | true/false |                  |                    |
+| password                   | text       |                  |                    |
+| username                   | text       |                  |                    |
+| watchers                   | true/false |                  |                    |
+| avatarUrl                  | url        |                  |                    |
+| createDate                 | datetime   |                  |                    |
+| production                 | true/false |                  |                    |
+| assetEnabled               | true/false |                  |                    |
+| cubeDisabled               | true/false |                  |                    |
+| readableName               | text       |                  |                    |
+| assignEnabled              | true/false |                  |                    |
+| cancelEnabled              | true/false |                  |                    |
+| commentsEnabled            | true/false |                  |                    |
+| priorityEnabled            | true/false |                  |                    |
+| priorityRequired           | true/false |                  | accruent\_360demom |
+| displayDepartment          | true/false |                  |                    |
+| attachmentsEnabled         | true/false |                  |                    |
+| **displayCommentUser**     | true/false |                  |                    |
+| userContactEnabled         | true/false |                  |                    |
+| completionDateDisabled     | true/false |                  |                    |
+| completionDateRequired     | true/false |                  | Citizens           |
+| **famisNotificationTypes** | array      | push, sms, email |                    |
+| notificationOnlyOnCreate   | true/false |                  |                    |
+| watcherNotificationDefault | true/false |                  |                    |
+| descriptionRequired        | true/false |                  |                    |
+| showRequesterDetails       | true/false |                  |                    |
 
 Array option configurations:
 
@@ -151,8 +152,26 @@ Single option configurations:
 | allRequestsEnabled       | true/false |         |       |
 | allRefreshInterval       | number     | 6000    |       |
 | allHistoryDays           | number     | 90      |       |
+| dueRequestsFutureDays    | number     | 30      |       |
+| dueRequestsEnabled       | true/false |         |       |
+| dueRefreshInterval       | number     | 6000    |       |
 
 Array option configurations:
+
+contactWidgetText
+
+| Config Data | Options | Example | Notes |
+| ----------- | ------- | ------- | ----- |
+| email       |         |         |       |
+| phone       |         |         |       |
+| title       |         |         |       |
+| details     |         |         |       |
+
+namedGreetingOptions
+
+| Config Data | Options    | Example | Notes |
+| ----------- | ---------- | ------- | ----- |
+| useFirst    | true/false |         |       |
 
 searchRequests
 
@@ -169,21 +188,6 @@ searchAllRequests
 | title       | text    |         |       |
 | prompt      | text    |         |       |
 | description | text    |         |       |
-
-contactWidgetText
-
-| Config Data | Options | Example | Notes |
-| ----------- | ------- | ------- | ----- |
-| email       |         |         |       |
-| phone       |         |         |       |
-| title       |         |         |       |
-| details     |         |         |       |
-
-namedGreetingOptions
-
-| Config Data | Options    | Example | Notes |
-| ----------- | ---------- | ------- | ----- |
-| useFirst    | true/false |         |       |
 
 openRequestsWidgetText
 
@@ -256,6 +260,52 @@ allRequestsWidgetText
 {% endtab %}
 {% endtabs %}
 
+dueRequestsWidgetText
+
+{% tabs %}
+{% tab title="Config Data" %}
+| Config Data | Options | Notes                                         |
+| ----------- | ------- | --------------------------------------------- |
+| widgetText  | array   | descText, typeText, requestText, locationText |
+{% endtab %}
+
+{% tab title="Example" %}
+```
+    "dueRequestsWidgetText": {
+        "widgetText": {
+            "descText": "Description",
+            "typeText": "Type",
+            "requestText": "Work Request ",
+            "locationText": "Location"
+        }
+    }
+```
+{% endtab %}
+{% endtabs %}
+
+watchedRequestsWidgetText
+
+{% tabs %}
+{% tab title="Config Data" %}
+| Config Data | Options | Notes                                         |
+| ----------- | ------- | --------------------------------------------- |
+| widgetText  | array   | descText, typeText, requestText, locationText |
+{% endtab %}
+
+{% tab title="Example" %}
+```
+    "watchedRequestsWidgetText": {
+        "widgetText": {
+            "descText": "Description",
+            "typeText": "Request Type",
+            "requestText": "Work Request ",
+            "locationText": "Location"
+        }
+    }
+```
+{% endtab %}
+{% endtabs %}
+
 requestTypeSubTypeWidget
 
 | Config Data                | Options   | Example | Notes                 |
@@ -305,29 +355,6 @@ requestTypeSubTypeWidget
                 "requestTypeLabel": "Cleaning Svcs"
             }
         ]
-```
-{% endtab %}
-{% endtabs %}
-
-watchedRequestsWidgetText
-
-{% tabs %}
-{% tab title="Config Data" %}
-| Config Data | Options | Notes                                         |
-| ----------- | ------- | --------------------------------------------- |
-| widgetText  | array   | descText, typeText, requestText, locationText |
-{% endtab %}
-
-{% tab title="Example" %}
-```
-    "watchedRequestsWidgetText": {
-        "widgetText": {
-            "descText": "Description",
-            "typeText": "Request Type",
-            "requestText": "Work Request ",
-            "locationText": "Location"
-        }
-    }
 ```
 {% endtab %}
 {% endtabs %}
