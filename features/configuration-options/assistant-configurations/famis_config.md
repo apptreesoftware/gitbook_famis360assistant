@@ -31,15 +31,15 @@ The famis\_config settings will control the following user experience in the ass
 | notificationOnlyOnCreate   | true/false |                  |                                                                                                                             |
 | watchers                   | true/false |                  |                                                                                                                             |
 | descriptionRequired        | true/false |                  |                                                                                                                             |
-| assetEnabled               | true/false |                  |                                                                                                                             |
-| cubeDisabled               | true/false |                  |                                                                                                                             |
-| assignEnabled              | true/false |                  |                                                                                                                             |
-| priorityEnabled            | true/false |                  |                                                                                                                             |
-| priorityRequired           | true/false |                  | accruent\_360demom                                                                                                          |
-| displayDepartment          | true/false |                  |                                                                                                                             |
+| assetEnabled               | true/false |                  | Only enable if only full users will use the assistant                                                                       |
+| cubeDisabled               | true/false |                  | Enable if FAMIS360 configuration requires room cube for guest users                                                         |
+| assignEnabled              | true/false |                  | Only enable if only full users will use the assistant                                                                       |
+| priorityEnabled            | true/false |                  | Used to override the FAMIS logbook configuration                                                                            |
+| priorityRequired           | true/false |                  | Used to override the FAMIS logbook configuration                                                                            |
+| displayDepartment          | true/false |                  | Enable if FAMIS360 configuration requires department for users                                                              |
 | completionDateDisabled     | true/false |                  |                                                                                                                             |
 | completionDateRequired     | true/false |                  | Citizens                                                                                                                    |
-| externalCostCenterEnabled  | true/false |                  |                                                                                                                             |
+| externalCostCenterEnabled  | true/false |                  | Enable if FAMIS360 configuration requires external cost center                                                              |
 | ccEmail                    | true/false |                  | Up to 5 cc email addresses can be added                                                                                     |
 | changeRequestor            | true/false |                  | When enabled the requestor can be changed when create request                                                               |
 | notifyRequestor            | true/false |                  |                                                                                                                             |
@@ -50,7 +50,7 @@ The famis\_config settings will control the following user experience in the ass
 | showRequesterDetails       | true/false |                  |                                                                                                                             |
 | commentsEnabled            | true/false |                  |                                                                                                                             |
 | displayCommentUser         | true/false |                  | Determines if name is shown on the comments of the work request.  Same value set as in `commentSettings`                    |
-| userContactEnabled         | true/false |                  |                                                                                                                             |
+| userContactEnabled         | true/false |                  | Restricts showing contact information (GCU)                                                                                 |
 | watcherNotificationDefault | true/false |                  |                                                                                                                             |
 
 ### Array option configurations:
