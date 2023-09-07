@@ -9,10 +9,6 @@ The famis\_config settings will control the following user experience in the ass
 
 ### Single option configurations:
 
-{% hint style="warning" %}
-Origination code/tracking code?
-{% endhint %}
-
 | Config Data                | Options    | Example          | Notes                                                                                                                       |
 | -------------------------- | ---------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | url                        | url        |                  |                                                                                                                             |
@@ -48,6 +44,7 @@ Origination code/tracking code?
 | changeRequestor            | true/false |                  | When enabled the requestor can be changed when create request                                                               |
 | notifyRequestor            | true/false |                  |                                                                                                                             |
 | trackingCode               | array      |                  | Name, Id                                                                                                                    |
+| originCodeId               | number     |                  | Only used with Incoming Email Request feature                                                                               |
 | attachmentsEnabled         | true/false |                  |                                                                                                                             |
 | cancelEnabled              | true/false |                  |                                                                                                                             |
 | showRequesterDetails       | true/false |                  |                                                                                                                             |
@@ -87,12 +84,12 @@ propertySettings
 
 searchResultsText
 
-| Config Data  | Options | Example     | Notes |
-| ------------ | ------- | ----------- | ----- |
-| descText     | text    | Description |       |
-| typeText     | text    | Type        |       |
-| requestText  | text    |             |       |
-| locationText | text    | Location    |       |
+| Config Data  | Options | Example     | Notes                      |
+| ------------ | ------- | ----------- | -------------------------- |
+| descText     | text    | Description |                            |
+| typeText     | text    | Type        |                            |
+| requestText  | text    | WO          | Prefix for work request ID |
+| locationText | text    | Location    |                            |
 
 requestTypeSettings
 
