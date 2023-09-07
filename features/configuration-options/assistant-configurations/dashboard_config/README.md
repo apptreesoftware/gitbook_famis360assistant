@@ -28,12 +28,28 @@ namedGreetingOptions
 | Config Data | Options    | Example | Notes |
 | ----------- | ---------- | ------- | ----- |
 | useFirst    | true/false |         |       |
+| useLast     | true/false |         |       |
+| useFull     | true/false |         |       |
+| useUsername | true/false |         |       |
+
+{% hint style="info" %}
+Configuration mainMenu (array) was used in early versions of the FAMIS360 assistant.  This is no longer used and does not need to be configured for customers.
+
+```
+  mainMenu: {
+    title: string;
+    description: string;
+    refreshInterval?: number;
+  };
+```
+{% endhint %}
 
 ### Banner image
 
-| Config Data    | Options | Example | Notes |
-| -------------- | ------- | ------- | ----- |
-| bannerImageUrl | url     |         |       |
+| Config Data      | Options | Example | Notes                                                                                               |
+| ---------------- | ------- | ------- | --------------------------------------------------------------------------------------------------- |
+| bannerImageUrl   | url     |         |                                                                                                     |
+| bannerImageScale | number  |         | Only need to set this if the banner image should be the full width because not using contact widget |
 
 ### Contact/Help Information
 
@@ -46,10 +62,10 @@ contactWidgetText
 
 | Config Data | Options | Example | Notes |
 | ----------- | ------- | ------- | ----- |
-| email       |         |         |       |
-| phone       |         |         |       |
 | title       |         |         |       |
 | details     |         |         |       |
+| phone       |         |         |       |
+| email       |         |         |       |
 
 ### Create request button options
 
@@ -59,22 +75,26 @@ contactWidgetText
 
 requestTypeSubTypeWidget
 
-| Config Data                | Options   | Example | Notes                 |
-| -------------------------- | --------- | ------- | --------------------- |
-| title                      | text      |         |                       |
-| prompt                     | text      |         |                       |
-| otherIcon                  | icon name |         |                       |
-| otherLabel                 | text      |         |                       |
-| requestTypeSubTypeSettings | array     |         | See config data below |
+| Config Data                | Options   | Example | Notes                                |
+| -------------------------- | --------- | ------- | ------------------------------------ |
+| title                      | text      |         |                                      |
+| description                | text      |         | Displays below the button title text |
+| prompt                     | text      |         |                                      |
+| otherIcon                  | icon name |         |                                      |
+| otherLabel                 | text      |         |                                      |
+| refreshInterval            | number    |         |                                      |
+| requestTypeSubTypeSettings | array     |         | See config data below                |
 
 {% tabs %}
 {% tab title="requestTypeSubTypeSettings Config Data" %}
-| Config Data      | Options   | Notes |
-| ---------------- | --------- | ----- |
-| icon             | icon name |       |
-| requestTypeId    | number    |       |
-| requestSubTypeId | number    |       |
-| requestTypeLabel | text      |       |
+| Config Data         | Options    | Notes                                                                                                          |
+| ------------------- | ---------- | -------------------------------------------------------------------------------------------------------------- |
+| icon                | icon name  |                                                                                                                |
+| requestTypeId       | number     |                                                                                                                |
+| requestSubTypeId    | number     |                                                                                                                |
+| requestTypeLabel    | text       | This is the value that displays on the button                                                                  |
+| requestSubTypeLabel | text       | This is displayed in the CW setup assistant                                                                    |
+| restrictEdit        | true/false | If true, then when on create request form the user is restricted from editing the type/subtype values selected |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -109,6 +129,8 @@ requestTypeSubTypeWidget
 ```
 {% endtab %}
 {% endtabs %}
+
+requestTypeWidget is a legacy configuration that should no longer be used for new implementations.  Use requestTypeSubTypeWidget configuration instead
 
 ### My open requests
 
@@ -271,11 +293,12 @@ dueRequestsWidgetText
 
 searchRequests
 
-| Config Data | Options | Example | Notes |
-| ----------- | ------- | ------- | ----- |
-| title       | text    |         |       |
-| prompt      | text    |         |       |
-| description | text    |         |       |
+| Config Data     | Options | Example | Notes |
+| --------------- | ------- | ------- | ----- |
+| title           | text    |         |       |
+| prompt          | text    |         |       |
+| description     | text    |         |       |
+| refreshInterval | number  |         |       |
 
 ### Search all requests
 
@@ -285,8 +308,9 @@ searchRequests
 
 searchAllRequests
 
-| ConfigData  | Options | Example | Notes |
-| ----------- | ------- | ------- | ----- |
-| title       | text    |         |       |
-| prompt      | text    |         |       |
-| description | text    |         |       |
+| ConfigData      | Options | Example | Notes |
+| --------------- | ------- | ------- | ----- |
+| title           | text    |         |       |
+| prompt          | text    |         |       |
+| description     | text    |         |       |
+| refreshInterval | number  |         |       |

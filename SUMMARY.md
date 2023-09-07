@@ -12,5 +12,6 @@
       * [auth\_proxy\_branding](features/configuration-options/assistant-configurations/auth\_proxy\_branding.md)
       * [famis\_notification\_types](features/configuration-options/assistant-configurations/famis\_notification\_types.md)
       * [famis\_config](features/configuration-options/assistant-configurations/famis\_config.md)
-      * [dashboard\_config](features/configuration-options/assistant-configurations/dashboard\_config.md)
+      * [dashboard\_config](features/configuration-options/assistant-configurations/dashboard\_config/README.md)
+        * [Incoming Email Requests](features/configuration-options/assistant-configurations/dashboard\_config/incoming-email-requests.md)
     * [AppTree administrative configurations](features/configuration-options/apptree-administrative-configurations.md)
