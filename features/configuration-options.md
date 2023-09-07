@@ -40,6 +40,10 @@ What notifications are sent by the assistant?
 
 ### famis\_config
 
+{% hint style="warning" %}
+Origination code/tracking code?
+{% endhint %}
+
 Single option configurations:
 
 | Config Data                 | Options    | Example          | Notes              |
