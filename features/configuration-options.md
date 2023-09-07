@@ -1,6 +1,21 @@
 # Configuration Options
 
-There are many configuration options available for the FAMIS360 assistant to customize the user experience desired.  The following is a list of those options by the configuration group name.
+There are many configuration options available for the FAMIS360 assistant to customize the user experience desired.
+
+## FAMIS360 direct configurations
+
+The following configuration settings the app gets from FAMIS360 and do not need to be configured in the assistant configuration.
+
+{% hint style="warning" %}
+Get the full list of these
+{% endhint %}
+
+* Add/View Watcher
+* Remove Watcher
+
+## Assistant configurations
+
+The following is a list of those options by the configuration group name.
 
 ### auth\_proxy\_branding
 
@@ -27,34 +42,35 @@ What notifications are sent by the assistant?
 
 Single option configurations:
 
-| Config Data                 | Options    | Example          | Notes    |
-| --------------------------- | ---------- | ---------------- | -------- |
-| url                         | url        |                  |          |
-| debug                       | true/false |                  |          |
-| active                      | true/false |                  |          |
-| password                    | text       |                  |          |
-| username                    | text       |                  |          |
-| watchers                    | true/false |                  |          |
-| avatarUrl                   | url        |                  |          |
-| createDate                  | datetime   |                  |          |
-| production                  | true/false |                  |          |
-| assetEnabled                | true/false |                  |          |
-| cubeDisabled                | true/false |                  |          |
-| readableName                | text       |                  |          |
-| assignEnabled               | true/false |                  |          |
-| cancelEnabled               | true/false |                  |          |
-| commentsEnabled             | true/false |                  |          |
-| priorityEnabled             | true/false |                  |          |
-| displayDepartment           | true/false |                  |          |
-| attachmentsEnabled          | true/false |                  |          |
-| **displayCommentUser**      | true/false |                  |          |
-| userContactEnabled          | true/false |                  |          |
-| completionDateDisabled      | true/false |                  |          |
-| completionDateRequired      | true/false |                  | Citizens |
-| **famiseNotificationTypes** | array      | push, sms, email |          |
-| notificationOnlyOnCreate    | true/false |                  |          |
-| watcherNotificationDefault  | true/false |                  |          |
-| descriptionRequired         | true/false |                  |          |
+| Config Data                 | Options    | Example          | Notes              |
+| --------------------------- | ---------- | ---------------- | ------------------ |
+| url                         | url        |                  |                    |
+| debug                       | true/false |                  |                    |
+| active                      | true/false |                  |                    |
+| password                    | text       |                  |                    |
+| username                    | text       |                  |                    |
+| watchers                    | true/false |                  |                    |
+| avatarUrl                   | url        |                  |                    |
+| createDate                  | datetime   |                  |                    |
+| production                  | true/false |                  |                    |
+| assetEnabled                | true/false |                  |                    |
+| cubeDisabled                | true/false |                  |                    |
+| readableName                | text       |                  |                    |
+| assignEnabled               | true/false |                  |                    |
+| cancelEnabled               | true/false |                  |                    |
+| commentsEnabled             | true/false |                  |                    |
+| priorityEnabled             | true/false |                  |                    |
+| priorityRequired            | true/false |                  | accruent\_360demom |
+| displayDepartment           | true/false |                  |                    |
+| attachmentsEnabled          | true/false |                  |                    |
+| **displayCommentUser**      | true/false |                  |                    |
+| userContactEnabled          | true/false |                  |                    |
+| completionDateDisabled      | true/false |                  |                    |
+| completionDateRequired      | true/false |                  | Citizens           |
+| **famiseNotificationTypes** | array      | push, sms, email |                    |
+| notificationOnlyOnCreate    | true/false |                  |                    |
+| watcherNotificationDefault  | true/false |                  |                    |
+| descriptionRequired         | true/false |                  |                    |
 
 Array option configurations:
 
@@ -110,27 +126,41 @@ selfRegistrationDefaults
 
 Single option configurations:
 
-| Config Data              | Options    | Example | Notes    |
-| ------------------------ | ---------- | ------- | -------- |
-| helpText                 | text       |         |          |
-| bannerImageUrl           | url        |         |          |
-| stepFlowEnabled          | true/false |         |          |
-| closedRequestSize        | number     |         |          |
-| allRequestsEnabled       | true/false |         |          |
-| openRefreshInterval      | number     | 30      |          |
-| openRequestsEnabled      | true/false |         |          |
-| closedRefreshInterval    | number     | 30      |          |
-| closedRequestsEnabled    | true/false |         |          |
-| watcherRefreshIntervale  | number     | 6000    |          |
-| watcherRequestsEnabled   | true/false |         |          |
-| closedRequestsWithinDays | number     | 60      |          |
-| contactMarkdownString    | text       |         | Citizens |
+| Config Data              | Options    | Example | Notes |
+| ------------------------ | ---------- | ------- | ----- |
+| helpText                 | text       |         |       |
+| appDescription           | text       |         |       |
+| bannerImageUrl           | url        |         |       |
+| stepFlowEnabled          | true/false |         |       |
+| closedRequestSize        | number     | 500     |       |
+| allRequestsEnabled       | true/false |         |       |
+| openRefreshInterval      | number     | 30      |       |
+| openRequestsEnabled      | true/false |         |       |
+| closedRefreshInterval    | number     | 30      |       |
+| closedRequestsEnabled    | true/false |         |       |
+| watcherRefreshIntervale  | number     | 6000    |       |
+| watcherRequestsEnabled   | true/false |         |       |
+| closedRequestsWithinDays | number     | 60      |       |
+| contactMarkdownString    | text       |         |       |
+| allRequestsNumberToShow  | number     | 25      |       |
+| allSearchHistoryDays     | number     | 30      |       |
+| allRequestsEnabled       | true/false |         |       |
+| allRefreshInterval       | number     | 6000    |       |
+| allHistoryDays           | number     | 90      |       |
 
 Array option configurations:
 
 searchRequests
 
 | Config Data | Options | Example | Notes |
+| ----------- | ------- | ------- | ----- |
+| title       | text    |         |       |
+| prompt      | text    |         |       |
+| description | text    |         |       |
+
+searchAllRequests
+
+| ConfigData  | Options | Example | Notes |
 | ----------- | ------- | ------- | ----- |
 | title       | text    |         |       |
 | prompt      | text    |         |       |
@@ -188,6 +218,29 @@ closedRequestsWidgetText
 {% tab title="Example" %}
 ```
     "closedRequestsWidgetText": {
+        "widgetText": {
+            "descText": "Description",
+            "typeText": "Type",
+            "requestText": "Work Request ",
+            "locationText": "Location"
+        }
+    }
+```
+{% endtab %}
+{% endtabs %}
+
+allRequestsWidgetText
+
+{% tabs %}
+{% tab title="Config Data" %}
+| Config Data | Options | Notes                                         |
+| ----------- | ------- | --------------------------------------------- |
+| widgetText  | array   | descText, typeText, requestText, locationText |
+{% endtab %}
+
+{% tab title="Example" %}
+```
+    "allRequestsWidgetText": {
         "widgetText": {
             "descText": "Description",
             "typeText": "Type",
