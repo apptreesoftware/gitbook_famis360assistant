@@ -66,6 +66,7 @@ contactWidgetText
 | details     |         |         |       |
 | phone       |         |         |       |
 | email       |         |         |       |
+| trail       |         |         |       |
 
 ### Create request button options
 
