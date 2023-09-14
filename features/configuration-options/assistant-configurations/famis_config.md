@@ -101,26 +101,36 @@ requestTypeSettings
 
 selfRegistrationDefaults
 
-| Config Data      | Options    | Example | Notes |
-| ---------------- | ---------- | ------- | ----- |
-| loginHelp        | text       |         |       |
-| firstName        | text       |         |       |
-| lastName         | text       |         |       |
-| title            | text       |         |       |
-| companyId        | number     |         |       |
-| companyName      | text       |         |       |
-| addr1            | text       |         |       |
-| city             | text       |         |       |
-| stateId          | number     |         |       |
-| stateName        | text       |         |       |
-| zip              | text       |         |       |
-| countryId        | number     |         |       |
-| countryName      | text       |         |       |
-| busPhone         | text       |         |       |
-| type             | number     |         |       |
-| typeName         | text       |         |       |
-| unnamedGuestFlag | true/false |         |       |
-| profileId        | number     |         |       |
-| profileName      | text       |         |       |
-| profileFlag      | boolean    |         |       |
-|                  |            |         |       |
+| Config Data        | Options    | Example | Notes    |
+| ------------------ | ---------- | ------- | -------- |
+| loginHelp          | text       |         |          |
+| firstName          | text       |         |          |
+| lastName           | text       |         |          |
+| title              | text       |         |          |
+| companyId          | number     |         |          |
+| companyName        | text       |         |          |
+| addr1              | text       |         |          |
+| city               | text       |         |          |
+| stateId            | number     |         |          |
+| stateName          | text       |         |          |
+| zip                | text       |         |          |
+| countryId          | number     |         |          |
+| countryName        | text       |         |          |
+| busPhone           | text       |         |          |
+| type               | number     |         |          |
+| typeName           | text       |         |          |
+| unnamedGuestFlag   | true/false |         |          |
+| profileId          | number     |         |          |
+| profileName        | text       |         |          |
+| profileFlag        | boolean    |         |          |
+| departmentId       | number     |         |          |
+| departmentName     | text       |         |          |
+| properties         | array      |         | Id       |
+| propertyNames      | array      |         | Id, Name |
+| regions            | array      |         | Id       |
+| regionNames        | array      |         | Id, Name |
+| activityGroups     | array      |         | Id       |
+| activityGroupNames | array      |         | Id, Name |
+| enforceDomain      | true/false |         |          |
+| password           | text       |         |          |
+| emailFrom          | text       |         |          |
