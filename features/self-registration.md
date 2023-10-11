@@ -17,4 +17,8 @@ The self-registration task does the following:
 * Searches for the user in FAMIS360 using the prefUsername attribute matching the FAMIS360 username
 * Searches for the user in FAMIS360 using the email attribute matching the FAMIS360 username
 * If a match is not found then the user is auto-provisioned in FAMIS360 using the user information from the SAML response and the defaults configured for the assistant's self-registration settings
-* If a match is found, but the user is not active, then the FAMIS360 user record is updated to an Active status
+* If a match is found, but the user is not active, then the FAMIS360 user record is updated to an Active status.  Additionally, the following are updated on the FAMIS360 user record
+  * Type ID := self-registration type configured
+  * Profile ID := self-registration profile configured
+  * Profile Flag := false
+  * Email := user email from SAML response
