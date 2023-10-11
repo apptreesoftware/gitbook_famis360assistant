@@ -15,3 +15,4 @@
       * [dashboard\_config](features/configuration-options/assistant-configurations/dashboard\_config/README.md)
         * [Incoming Email Requests](features/configuration-options/assistant-configurations/dashboard\_config/incoming-email-requests.md)
     * [AppTree administrative configurations](features/configuration-options/apptree-administrative-configurations.md)
+  * [Self Registration](features/self-registration.md)
